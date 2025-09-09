@@ -1,10 +1,7 @@
 # Shape and Color Detection using OpenCV (Classic CV)
 
 ## Overview
-Detects simple geometric shapes (rectangle, square, circle, triangle, etc.) and their colors (red/green/blue/yellow) using classical computer vision techniques (no deep learning).
-
-## What's fixed/updated
-Originally, average-RGB→single-pixel-HSV approach missed some yellows. This repository uses **HSV color masks** and computes the **fraction of pixels inside each contour** that match a color — far more robust for varied lighting and anti-aliased edges.
+Detects simple geometric shapes (rectangle, square, circle, triangle, etc.) and their colors (red/green/blue/yellow) using classical computer vision techniques .
 
 ## How it works (short)
 1. Convert image to grayscale → blur → Canny edges.
@@ -18,14 +15,9 @@ Originally, average-RGB→single-pixel-HSV approach missed some yellows. This re
    - For each color, `cv2.inRange()` with predefined HSV ranges
    - Compute color fraction inside the contour; choose best color if fraction above threshold
    - Fallback to mean-HSV mapping if needed
+## Problems 
+- There was a problem in detecting yellow color
 
 ## Files
-- `shape_color_detector.py` — single-file script for VS Code / local use
-- `notebook.ipynb` — optional Colab notebook split into runnable cells (or use the provided code segments)
-- `requirements.txt`
-
-## Run locally (VS Code)
-1. Clone repo:
-   ```bash
-   git clone https://github.com/yourname/shape-color-detection.git
-   cd shape-color-detection
+- `Shape_Detector.py` — single-file script for VS Code / local use
+- `tst.jpg`
